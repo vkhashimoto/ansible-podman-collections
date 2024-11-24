@@ -744,20 +744,12 @@ options:
       - I(<network-name>|<network-id>) - connect to a user-defined network
       - I(ns:<path>) - path to a network namespace to join
       - I(slirp4netns) - use slirp4netns to create a user network stack.
+        This is the default for rootless containers.
     type: list
     elements: str
     aliases:
       - net
       - network_mode
-    default: slirp4netns
-    choices:
-        - bridge
-        - none
-        - container:<name|id>
-        - host
-        - <network-name>|<network-id>
-        - ns:<path>
-        - slirp4netns
   network_aliases:
     description:
       - Add network-scoped alias for the container.
